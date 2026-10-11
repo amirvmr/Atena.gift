@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>برای آتنا 💜</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Tahoma, sans-serif;
+  color: white;
+  background: radial-gradient(ellipse at bottom, #38205f, #10091f 75%);
+  overflow-x: hidden;
+  text-align: center;
+}
+
+#stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  color: #fff1ff;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: .2; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1.3); }
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 18px;
+}
+
+.card {
+  width: 100%;
+  max-width: 430px;
+  padding: 30px 22px;
+  border: 1px solid #d9a7ff55;
+  border-radius: 28px;
+  background: #24133bc9;
+  box-shadow: 0 0 45px #a44aff25;
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  font-size: 27px;
+  color: #f5c7ff;
+  line-height: 1.8;
+}
+
+p {
+  font-size: 16px;
+  line-height: 2.2;
+  color: #f6eafa;
+}
+
+.emoji {
+  font-size: 65px;
+  margin: 12px;
+  animation: float 2.5s infinite ease-in-out;
+}
+
+@keyframes float {
+  50% { transform: translateY(-10px); }
+}
+
+button {
+  border: 0;
+  border-radius: 30px;
+  padding: 14px 24px;
+  margin-top: 16px;
+  background: linear-gradient(135deg, #e7aaff, #a66bff);
+  color: #281039;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 22px #c77bff35;
+}
+
+button:active {
+  transform: scale(.96);
+}
+
+.page {
+  display: none;
+  animation: appear .7s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heart {
+  position: fixed;
+  bottom: -40px;
+  z-index: 5;
+  pointer-events: none;
+  animation: rise 4s linear forwards;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+.gift {
+  font-size: 95px;
+  cursor: pointer;
+  display: inline-block;
+  animation: float 2s infinite ease-in-out;
+}
+
+.small {
+  font-size: 12px;
+  opacity: .65;
+  margin-top: 28px;
+}
+</style>
+</head>
+
+<body>
+<div id="stars"></div>
+
+<main>
+<div class="card">
+
+  <section class="page active" id="p0">
+    <div class="emoji">🌙</div>
+    <h1>یه چیزی برای تو دارم ...</h1>
+    <p>
+      یه سورپرایز کوچولوئه،<br>
+      ولی از ته قلبم برات آماده‌ش کردم. 💜
+    </p>
+    <button onclick="next(1)">ببینم چیه؟ ✨</button>
+  </section>
+
+  <section class="page" id="p1">
+    <div class="emoji">🌷</div>
+    <h1>اول یه چیزو بدون...</h1>
+    <p>
+      بعضی آدما بدون اینکه خودشون بدونن،<br>
+      با بودنشون دنیا رو قشنگ‌تر می‌کنن.<br>
+      تو هم یکی از همون آدمایی 🫶🏻
+    </p>
+    <button onclick="next(2)">بعدش چی؟ 💌</button>
+  </section>
+
+  <section class="page" id="p2">
+    <div class="emoji">🦋</div>
+    <h1>این پیام مخصوص توئه!</h1>
+    <p>
+      امیدوارم همیشه بخندی،<br>
+      به چیزایی که دوست داری برسی،<br>
+      و هیچ‌وقت یادت نره که<br>
+      لایق قشنگ‌ترین اتفاقای دنیایی. 💗
+    </p>
+    <button onclick="next(3)">یه هدیه هم هست؟ 🎁</button>
+  </section>
+
+  <section class="page" id="p3">
+    <div class="emoji">💝</div>
+    <h1>آره! یه هدیه‌ی مخفی!</h1>
+    <p>
+      روی جعبه بزن تا باز بشه...<br>
+      ببینیم توش چی قایم کردم! 👀
+    </p>
+    <div class="gift" onclick="next(4)">🎁</div>
+    <p class="small">برای باز کردن هدیه روی جعبه بزن</p>
+  </section>
+
+  <section class="page" id="p4">
+    <div class="emoji">💖</div>
+    <h1>روزت مبارک خانوم خوشگله! 🌸</h1>
+    <p>
+      امیدوارم زندگیت پر از آرامش،<br>
+      خنده‌های از ته دل، آرزوهای قشنگ<br>
+      و آدمایی باشه که واقعاً دوستت دارن.<br><br>
+
+      همیشه بدرخش،<br>
+      همیشه خودت باش،<br>
+      و هیچ‌وقت زیبایی دنیاتو فراموش نکن. ✨<br><br>
+
+      <strong>تو لایق بهترین‌هایی! 💜</strong>
+    </p>
+    <div class="emoji">🌷🦋🌷</div>
+    <button onclick="restart()">دوباره از اول ببینیم؟ 💫</button>
+    <p class="small">با کلی آرزوی قشنگ برای تو 💜</p>
+  </section>
+
+</div>
+</main>
+
+<script>
+const stars = document.getElementById("stars");
+
+for (let i = 0; i < 90; i++) {
+  const s = document.createElement("span");
+  s.className = "star";
+  s.textContent = Math.random() > .5 ? "✦" : "·";
+  s.style.left = Math.random() * 100 + "%";
+  s.style.top = Math.random() * 100 + "%";
+  s.style.fontSize = (Math.random() * 12 + 5) + "px";
+  s.style.animationDelay = Math.random() * 3 + "s";
+  stars.appendChild(s);
+}
+
+function next(n) {
+  document.querySelectorAll(".page").forEach(p => {
+    p.classList.remove("active");
+  });
+
+  document.getElementById("p" + n).classList.add("active");
+
+  for (let i = 0; i < 12; i++) {
+    setTimeout(makeHeart, i * 100);
+  }
+}
+
+function makeHeart() {
+  const h = document.createElement("div");
+  h.className = "heart";
+  h.textContent = ["💜", "💗", "💕", "✨", "🌸"][
+    Math.floor(Math.random() * 5)
+  ];
+  h.style.left = Math.random() * 100 + "%";
+  h.style.fontSize = (Math.random() * 20 + 16) + "px";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 4000);
+}
+
+function restart() {
+  next(0);
+}
+</script>
+
+</body>
+</html>
